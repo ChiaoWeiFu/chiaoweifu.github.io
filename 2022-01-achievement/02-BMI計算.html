@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI-Counter</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0 50px;
+            font-family: '標楷體', 'Courier New', Courier, monospace;
+            font-weight: 900;
+            font-size: 20px;
+            background-color: burlywood;
+        }
+
+        .navbar {
+            width: 800px;
+            height: 460px;
+            background-image: url(https://www.zinitt.com/wp-content/uploads/fc270e4b-body-fat-percentage-cover-photo.jpg);
+        }
+
+        #main {
+            width: 800px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .item {
+            margin: 5px;
+        }
+
+        .button {
+            width: 100px;
+            height: 50px;
+            font-size: 40px;
+            text-align: center;
+            line-height: 50px;
+        }
+        .presentation {
+            display: flex;
+            align-items: center;
+        }
+        .result {
+            border: solid 1px blue;
+            width: 200px;
+            height: 30px;
+            line-height: 30px;
+        }
+        .table-th {
+            width: 50px;
+            height: 20px;
+        }
+        .table-td {
+            width: 120px;
+            height: 20px;
+        }
+        .table-td2 {
+            width: 200px;
+            height: 20px;
+        }
+        .active-normal {
+            background-color: cornflowerblue;
+        }
+        .active-danger {
+            background-color: crimson;
+        }
+        .title {
+            margin-top: 25px;
+            font-size: 28px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="navbar"></div>
+    </header>
+    <section id="main">
+        <div class="container">
+            <h1>BMI</h1>
+            <div>
+                身高(公分):<input class="item input-tall" type="number">
+            </div>
+            <div>
+                體重(公斤):<input class="item input-weight" type="number">
+            </div>
+            <button class="item button">計算</button>
+            <button class="item button clean">清除</button>
+            <div class="presentation">
+                您的BMI:
+                <div class="item result"></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="title">身體質量指數(BMI)</div>
+            <table>
+                <tbody>
+                    <tr>
+                        <th class="table-th">
+                        </th>
+                    </tr>
+                    <tr>
+                        <td class="table-td weight-light">
+                            體重過輕：
+                        </td>
+                        <td class="table-td2 weight-light">
+                            BMI ＜ 18.5
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="table-td weight-normal ">
+                            正常範圍：
+                        </td>
+                        <td class="table-td2 weight-normal">
+                            18.5 ≦ BMI ＜ 24
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="table-td weight-danger1">過重：</td>
+                        <td class="table-td2 weight-danger1">
+                            24 ≦ BMI ＜ 27
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <td class="table-td weight-danger2">輕度肥胖：</td>
+                        <td class="table-td2 weight-danger2">27 ≦ BMI ＜ 30</td>
+                        
+                    </tr>
+                    <tr>
+                        <td class="table-td weight-danger3">中度肥胖：</td>
+                        <td class="table-td2 weight-danger3">30 ≦ BMI ＜ 35</td>
+                        
+                    </tr>
+                    <tr>
+                        <td class="table-td weight-danger4">重度肥胖：</td>
+                        <td class="table-td2 weight-danger4">BMI ≧ 35</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </section>
+
+    <script>
+        var inputtall = document.querySelector('.input-tall');
+        var inputweight = document.querySelector('.input-weight');
+        var ans = document.querySelector('.result');
+        var btn = document.querySelector('.button');
+        var btnclean = document.querySelector('.clean');
+        let weightLights = document.querySelectorAll('.weight-light');
+        let weightNormals = document.querySelectorAll('.weight-normal');
+        let weightDanger1s = document.querySelectorAll('.weight-danger1');
+        let weightDanger2s = document.querySelectorAll('.weight-danger2');
+        let weightDanger3s = document.querySelectorAll('.weight-danger3');
+        let weightDanger4s = document.querySelectorAll('.weight-danger4');
+        function cleanColor() {
+            let colorActives = document.querySelectorAll('.active-danger');
+            let colorNormals = document.querySelectorAll('.active-normal');
+            if (colorActives) {
+                colorActives.forEach(function (colorActive) {
+                    colorActive.classList.remove('active-danger')
+                })
+            };
+            if(colorNormals){
+                colorNormals.forEach(function (colorNormal) {
+                    colorNormal.classList.remove('active-normal')
+                })
+            };
+        }
+        btn.addEventListener('click', function () {
+            var tallnum = Number(inputtall.value);
+            var weightnum = Number(inputweight.value);
+            var answer = Math.round(weightnum / ((tallnum / 100) ** 2) * 100) / 100;
+            var resaultElement = '';
+            cleanColor();
+            if (tallnum == 0){
+                window.alert('請輸入身高')
+            }
+            else if (weightnum == 0) {
+                window.alert('請輸入體重')
+            }
+            else if (answer < 18.5) {
+                resaultElement ='    ' + '體重過輕';
+                weightLights.forEach(function (weightLight) {
+                    weightLight.classList.add('active-danger');
+                });
+            }
+            else if (answer < 24) {
+                resaultElement ='    ' + '正常範圍';
+                weightNormals.forEach(function (weightNormal) {
+                    weightNormal.classList.add('active-normal');
+                });
+            }
+            else if (answer < 27) {
+                resaultElement ='    ' + '體重過重';
+                weightDanger1s.forEach(function (weightDanger1) {
+                    weightDanger1.classList.add('active-danger');
+                });
+            }
+            else if (answer < 30) {
+                resaultElement ='    ' + '輕度肥胖';
+                weightDanger2s.forEach(function (weightDanger2) {
+                    weightDanger2.classList.add('active-danger');
+                });
+            }
+            else if (answer < 35) {
+                resaultElement ='    ' + '中度肥胖';
+                weightDanger3s.forEach(function (weightDanger3) {
+                    weightDanger3.classList.add('active-danger');
+                });
+            }
+            else {
+                resaultElement ='    ' + '重度肥胖';
+                weightDanger4s.forEach(function (weightDanger4) {
+                    weightDanger4.classList.add('active-danger');
+                });
+            }
+            ans.textContent = answer + resaultElement;
+        });
+        btnclean.addEventListener('click', function () {
+           inputtall.value = '';
+           inputweight.value = '' ;
+           ans.textContent = '';
+           cleanColor();
+        })
+    </script>
+</body>
+
+</html>

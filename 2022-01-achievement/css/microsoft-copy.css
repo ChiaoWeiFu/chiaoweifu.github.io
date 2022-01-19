@@ -1,0 +1,462 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: calc(1600px + 10%);
+    margin: 0 auto 20px;
+    padding: 0 5%;
+}
+
+
+/* ---------navbar--------- */
+
+.navbar {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 150px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img {
+    width: 28px;
+    height: 28px;
+}
+
+.navbar-left-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.navbar-left-menu-list>a {
+    padding: 0 12.5px;
+    text-decoration: none;
+}
+
+.navbar-left-menu-list:last-child {
+    padding-right: 0;
+    display: none;
+}
+.navbar-left-menu-list:nth-child(1), .navbar-left-menu-list:nth-child(2) {
+    display: none;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.all-microsoft-btn {
+    padding: 0 20px;
+}
+
+.search-btn {
+    padding: 0 20px;
+}
+
+.shopping-cart {
+    padding: 0 20px;
+}
+
+.acount {
+    padding: 0 20px;
+}
+
+
+/* --------banner-------- */
+
+.carousel {
+    position: relative;
+    width: 100%;
+    /* 
+		設計稿上，寬度是 1920px 的情況下，carousel-img 的高為 600px，
+		所以寬高比為： (600 / 1920) * 100% = 31.25%
+		因為寬度 1920px 其實就是 100vw，所以單位替換成 vw
+	*/
+    height: 31.25vw;
+}
+
+.carousel-img {
+    width: 100%;
+    height: 100%;
+    background-image: url(https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4u5ko?ver=9fb2&q=0&m=8&h=600&w=1600&b=%23FFFFFFFF&l=f&x=0&y=169&s=2120&d=795&aim=true);
+    background-size: cover;
+}
+
+.carousel-info {
+    width: 440px;
+    height: 145px;
+    font-size: 15px;
+    line-height: 20px;
+    position: absolute;
+    left: 100px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel-info a {
+    padding: 8px 20px;
+    color: white;
+    background-color: black;
+    text-decoration: none;
+}
+
+
+/* ---------quicklink----------- */
+
+.quicklink-all {
+    display: flex;
+    justify-content: center;
+    align-content: flex-end;
+    padding-top: 48px;
+}
+
+.quicklink {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 8px 14px 8px;
+    color: black;
+}
+
+.quicklink-info {
+    text-align: center;
+    width: 97px;
+    margin: 0 21 0 22;
+}
+
+.other-product-all {
+    display: flex;
+    margin: 0 -12px;
+}
+
+.other-product {
+    width: 25%;
+    padding: 0 12px;
+}
+
+.other-product p {
+    font-size: 15px;
+}
+
+.other-product-link {
+    color: black;
+    text-decoration: none;
+}
+.other-product-link>img {
+    width: 100%;
+    height: 10.46vw;
+}
+.other-product-link span {
+    display: none;
+}
+
+.carousel2 {
+    position: relative;
+    width: 100%;
+    /* 
+		設計稿上，寬度是 1920px 的情況下，carousel-img 的高為 600px，
+		所以寬高比為： (600 / 1920) * 100% = 31.25%
+		因為寬度 1920px 其實就是 100vw，所以單位替換成 vw
+	*/
+    height: 31.25vw;
+}
+
+.carousel2-img {
+    width: 100%;
+    height: 100%;
+    background-image: url(https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE3hFDE?ver=e113&q=0&m=8&h=303&w=539&b=%23FFFFFFFF&l=f&x=504&y=148&s=1616&d=908&aim=true);
+    background-size: cover;
+}
+
+.carousel2-info {
+    width: 440px;
+    height: 145px;
+    font-size: 15px;
+    line-height: 20px;
+    position: absolute;
+    left: 100px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel2-info a {
+    padding: 8px 20px;
+    color: white;
+    background-color: black;
+    text-decoration: none;
+}
+
+.other-product2-title {
+    font-size: 20px;
+    font-weight: bolder;
+    margin: 20px 0;
+}
+
+.other-product2-all {
+    display: flex;
+    margin: 0 -12px;
+    align-items: flex-end;
+}
+
+.other-product2 {
+    width: 25%;
+    padding: 0 12px;
+}
+
+.other-product2 p {
+    font-size: 15px;
+}
+
+.other-product2-link {
+    color: black;
+    text-decoration: none;
+}
+.other-product2-link>img {
+    width: 100%;
+    height: 10.46vw;
+}
+.other-product2-link span {
+    display: none;
+}
+
+.region-menu {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+}
+
+.region-menu li {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.footer-info {
+    background-color: #F2F2F2;
+}
+
+.col-6 {
+    display: flex;
+    justify-content: space-between;
+    background-color: #F2F2F2;
+}
+
+.footer-items-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.footer-items-title {
+    margin-top: 40px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.footer-items-list li {
+    margin-bottom: 20px;
+    font-size: 12px;
+}
+
+.footer-items-list li h2 {
+    margin: 0;
+}
+
+.footer-items-list li a {
+    text-decoration: none;
+}
+
+@media screen and (max-width: 1400px) {
+    .search-btn span,
+    .shopping-cart span,
+    .acount span {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1083px) {
+    .container {
+        max-width: none;
+        width: 100%;
+        padding: 0;
+    }
+    .other-product-all {
+        flex-wrap: wrap;
+        padding: 16px 42px 0 ;
+    }
+    .other-product {
+        width: 50%;
+        padding: 0 12px;
+    }
+    .other-product-link>img {
+        height: 24.72vw;
+    }
+    .other-product2-all {
+        flex-wrap: wrap;
+        padding: 16px 42px 0 ;
+        align-items: flex-start;
+    }
+    .other-product2 {
+        width: 50%;
+        padding: 0 12px;
+    }
+    .other-product2-link>img {
+        height: 24.72vw;
+    }
+    .other-product2-title {
+        padding-left: 40px;
+    }
+    .region-menu {
+        padding-left: 20px;
+    }
+    .footer-items {
+        width: 33%;
+    }
+    .col-6 {
+        flex-wrap: wrap;
+        padding-left: 20px;
+    }
+}
+
+@media screen and (max-width: 930px) {
+    .navbar-left-menu-list:nth-child(5), 
+    .navbar-left-menu-list:nth-child(6) {
+        display: none;
+    }
+    .navbar-left-menu-list:nth-child(7) {
+        display: inline-block;
+    }
+}
+@media screen and (max-width: 885px) {
+    .navbar-left-menu-list:nth-child(3), 
+    .navbar-left-menu-list:nth-child(4),
+    .navbar-left-menu-list:nth-child(5),
+    .navbar-left-menu-list:nth-child(6),
+    .navbar-left-menu-list:nth-child(7),
+    .navbar-left-menu-list:nth-child(8){
+        display: none;
+    }
+    .navbar-left-menu-list:nth-child(1), .navbar-left-menu-list:nth-child(2) {
+        display: inline-block;
+    }
+    .logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .navbar-right-btn:nth-child(1),
+    .navbar-right-btn:nth-child(2) {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 765px) {
+    .carousel {
+        height: 750px;
+        background-color: #323232;
+    }
+    .carousel-img {
+        background-image: url(https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RWLAmj?ver=35aa&q=0&m=8&h=431&w=767&b=%23FFFFFFFF&l=f&x=1131&y=919&s=767&d=431&aim=true);
+        height: 420px;
+    }
+    .carousel-info {
+        height: 50%;
+        color: white;
+        top: 65%;
+        left: 50%;
+        transform: none;
+        transform: translate(-50%, 0);
+        text-align: center;
+    }
+    .quicklink-all {
+        padding-left: 40px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .quicklink {
+        flex-direction: row;
+    }
+    .quicklink>img {
+        width: 20px;
+        height: 20px;
+    }
+    .quicklink-info {
+        width: 200px;
+        text-align: left;
+    }
+    
+    .carousel2 {
+        height: 750px;
+        background-color: #323232;
+    }
+    .carousel2-img {
+        background-image: url(https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE3hFDE?ver=e113&q=0&m=8&h=431&w=767&b=%23FFFFFFFF&l=f&x=494&y=172&s=1626&d=914&aim=true);
+        height: 420px;
+    }
+    .carousel2-info {
+        height: 50%;
+        color: white;
+        top: 65%;
+        left: 50%;
+        transform: none;
+        transform: translate(-50%, 0);
+        text-align: center;
+    }
+}
+@media screen and (max-width: 540px) {
+    .other-product {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+    .other-product-link>img {
+        height: 50.18vw;
+    }
+    .other-product-link span {
+        text-decoration: underline;
+        display: block;
+    }
+    .other-product2 {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+    .other-product2-link>img {
+        height: 50.18vw;
+    }
+    .other-product2-link span {
+        text-decoration: underline;
+        display: block;
+    }
+    .footer-items {
+        width: 100%;
+    }
+    .container:last-child {
+        margin-bottom: 0;
+    }
+}
